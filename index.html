@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shibihhh | B.Tech Undergrad & Creative Web Developer</title>
+  <meta name="description" content="Personal portfolio and interactive data matrix of Shibihhh - B.Tech student and modern web developer specializing in immersive web animations.">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Space+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome 6 Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Interactive Background Canvas -->
+  <canvas id="particles-canvas"></canvas>
+
+  <!-- Custom Glowing Cursor -->
+  <div class="cursor-dot" id="cursor-dot"></div>
+  <div class="cursor-outline" id="cursor-outline"></div>
+
+  <!-- Main Navigation -->
+  <nav class="navbar">
+    <a href="#hero" class="nav-brand">
+      <div class="brand-icon">S</div>
+      <span>shibihhh<span style="color: var(--accent);">.dev</span></span>
+    </a>
+
+    <ul class="nav-links" id="nav-menu">
+      <li><a href="#about">My Data</a></li>
+      <li><a href="#lab">Animation Lab</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#journey">Journey</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+
+    <div class="nav-actions">
+      <!-- Synthesized Audio Toggle -->
+      <button class="btn-sound" id="sound-toggle" title="Toggle UI Sound Effects">
+        <i class="fa-solid fa-volume-xmark"></i>
+        <span>Audio: OFF</span>
+      </button>
+
+      <!-- Mobile Hamburger Button -->
+      <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Page Content Container -->
+  <div class="content-wrapper">
+
+    <!-- ====================================================================
+         Hero Section
+         ==================================================================== -->
+    <section class="hero" id="hero">
+      <div class="hero-badge">
+        <span class="badge-pulse"></span>
+        <span>Available for internships & collaborations</span>
+      </div>
+
+      <h1 class="hero-title">
+        Hi, I'm <span class="gradient-text">Shibihhh</span>
+      </h1>
+
+      <div class="hero-subtitle">
+        I am a <span id="typed-text" class="typed-target"></span><span class="typing-cursor"></span>
+      </div>
+
+      <p class="hero-description">
+        Undergraduate B.Tech student blending engineering precision with creative web animation. 
+        I craft responsive, living digital experiences, interactive frontends, and dynamic web interfaces.
+      </p>
+
+      <div class="hero-cta-group">
+        <a href="#about" class="btn btn-primary">
+          <i class="fa-solid fa-terminal"></i>
+          <span>Explore My Data</span>
+        </a>
+        <a href="#lab" class="btn btn-glass">
+          <i class="fa-solid fa-wand-magic-sparkles"></i>
+          <span>Test Animations</span>
+        </a>
+        <a href="#contact" class="btn btn-glass">
+          <i class="fa-regular fa-paper-plane"></i>
+          <span>Let's Connect</span>
+        </a>
+      </div>
+
+      <!-- Quick Metrics Bar -->
+      <div class="hero-quick-stats">
+        <div class="stat-chip tilt-card">
+          <div class="stat-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+          <div class="stat-info">
+            <h4>8.8+ CGPA</h4>
+            <p>B.Tech Undergrad</p>
+          </div>
+        </div>
+        <div class="stat-chip tilt-card">
+          <div class="stat-icon"><i class="fa-solid fa-code"></i></div>
+          <div class="stat-info">
+            <h4>15+ Projects</h4>
+            <p>Web Dev & Apps</p>
+          </div>
+        </div>
+        <div class="stat-chip tilt-card">
+          <div class="stat-icon"><i class="fa-solid fa-microchip"></i></div>
+          <div class="stat-info">
+            <h4>12+ Techs</h4>
+            <p>Stack Proficiency</p>
+          </div>
+        </div>
+        <div class="stat-chip tilt-card">
+          <div class="stat-icon"><i class="fa-solid fa-clock"></i></div>
+          <div class="stat-info">
+            <h4>1,200+ Hrs</h4>
+            <p>Coded & Built</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         About / Personal Data Matrix & Interactive Terminal
+         ==================================================================== -->
+    <section id="about" class="reveal-on-scroll">
+      <div class="section-header">
+        <span class="section-tag">// IDENTITY & DATA</span>
+        <h2 class="section-title">Personal Data Matrix</h2>
+        <p class="section-desc">
+          Inspect my engineering credentials, academic specs, or query my profile directly using the interactive terminal.
+        </p>
+      </div>
+
+      <div class="data-grid">
+        <!-- Interactive Terminal Emulator -->
+        <div class="terminal-window">
+          <div class="terminal-header">
+            <div class="terminal-dots">
+              <span class="dot-red"></span>
+              <span class="dot-yellow"></span>
+              <span class="dot-green"></span>
+            </div>
+            <div class="terminal-title">shibihhh@dev-workstation:~</div>
+            <div class="terminal-actions">
+              <i class="fa-solid fa-circle-question" style="color: var(--text-muted); font-size: 0.85rem;" title="Type 'help' in terminal"></i>
+            </div>
+          </div>
+
+          <div class="terminal-body" id="terminal-output">
+            <div class="term-line">
+              <span class="term-cyan">Welcome to Shibihhh's interactive CLI v2.4</span>
+            </div>
+            <div class="term-line">
+              Type <span class="term-yellow">'help'</span> or click the shortcut chips below to query my data.
+            </div>
+            <div class="term-line output">
+              <span class="term-accent">SYSTEM STATUS:</span> Online | B.Tech Undergrad | Web Dev Stack Ready.
+            </div>
+          </div>
+
+          <div class="quick-commands">
+            <span class="quick-label">Run:</span>
+            <button class="cmd-pill" data-cmd="bio">bio</button>
+            <button class="cmd-pill" data-cmd="data">data</button>
+            <button class="cmd-pill" data-cmd="skills">skills</button>
+            <button class="cmd-pill" data-cmd="projects">projects</button>
+            <button class="cmd-pill" data-cmd="contact">contact</button>
+            <button class="cmd-pill" data-cmd="clear">clear</button>
+          </div>
+
+          <div class="terminal-input-bar">
+            <span class="term-prompt">shibihhh@dev:~$</span>
+            <input type="text" id="terminal-input" placeholder="type a command (e.g. bio, data, help)..." autocomplete="off" spellcheck="false">
+          </div>
+        </div>
+
+        <!-- Academic & Personal Data Card -->
+        <div class="data-cards-column">
+          <div class="bio-card tilt-card">
+            <div class="bio-card-header">
+              <div class="bio-avatar">
+                <i class="fa-solid fa-user-astronaut"></i>
+              </div>
+              <div>
+                <h3>Shibihhh</h3>
+                <p>B.Tech Undergrad & Creative Web Developer</p>
+              </div>
+            </div>
+
+            <p style="color: var(--text-secondary); line-height: 1.6; font-size: 0.95rem;">
+              Enthusiastic computer science student with a deep passion for modern frontend engineering, 
+              creative web animation, and intuitive user experiences. Dedicated to crafting software that solves problems elegantly.
+            </p>
+
+            <div class="academic-specs-grid">
+              <div class="spec-box">
+                <div class="spec-title">Degree</div>
+                <div class="spec-value">B.Tech Engineering</div>
+              </div>
+              <div class="spec-box">
+                <div class="spec-title">Specialization</div>
+                <div class="spec-value">Computer Science</div>
+              </div>
+              <div class="spec-box">
+                <div class="spec-title">Current Phase</div>
+                <div class="spec-value">3rd Year Student</div>
+              </div>
+              <div class="spec-box">
+                <div class="spec-title">Location</div>
+                <div class="spec-value">India</div>
+              </div>
+            </div>
+
+            <div style="margin-top: 20px; display: flex; gap: 8px; flex-wrap: wrap;">
+              <span class="project-tag">#WebAnimations</span>
+              <span class="project-tag">#JavaScript</span>
+              <span class="project-tag">#Frontend</span>
+              <span class="project-tag">#Algorithms</span>
+              <span class="project-tag">#CreativeCoding</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         Interactive Web Animation Lab / Sandbox
+         ==================================================================== -->
+    <section id="lab" class="reveal-on-scroll">
+      <div class="section-header">
+        <span class="section-tag">// EXPERIMENTAL PLAYGROUND</span>
+        <h2 class="section-title">Web Animation Lab</h2>
+        <p class="section-desc">
+          Interact in real-time with the physics engine powering the background constellation. 
+          Modify particle counts, velocity, attraction dynamics, and cyber color palettes.
+        </p>
+      </div>
+
+      <div class="lab-container">
+        <div class="lab-grid">
+          <!-- Slider 1: Particle Count -->
+          <div class="lab-control-group">
+            <div class="control-label">
+              <span><i class="fa-solid fa-atom"></i> Particle Density</span>
+              <span class="control-val" id="val-particles">85</span>
+            </div>
+            <input type="range" id="slider-particles" min="20" max="180" value="85" step="5">
+          </div>
+
+          <!-- Slider 2: Speed Multiplier -->
+          <div class="lab-control-group">
+            <div class="control-label">
+              <span><i class="fa-solid fa-gauge-high"></i> Physics Velocity</span>
+              <span class="control-val" id="val-speed">0.9x</span>
+            </div>
+            <input type="range" id="slider-speed" min="0.2" max="3.0" value="0.9" step="0.1">
+          </div>
+
+          <!-- Slider 3: Connection Distance -->
+          <div class="lab-control-group">
+            <div class="control-label">
+              <span><i class="fa-solid fa-circle-nodes"></i> Constellation Distance</span>
+              <span class="control-val" id="val-distance">130px</span>
+            </div>
+            <input type="range" id="slider-distance" min="60" max="220" value="130" step="10">
+          </div>
+
+          <!-- Color Palette Chooser -->
+          <div class="lab-control-group">
+            <div class="control-label">
+              <span><i class="fa-solid fa-palette"></i> Neon Theme</span>
+            </div>
+            <div class="theme-selector-group">
+              <button class="theme-btn active" data-theme="cyan">
+                <span class="color-dot" style="background: #00f5d4;"></span> Cyan
+              </button>
+              <button class="theme-btn" data-theme="purple">
+                <span class="color-dot" style="background: #a855f7;"></span> Violet
+              </button>
+              <button class="theme-btn" data-theme="emerald">
+                <span class="color-dot" style="background: #10b981;"></span> Emerald
+              </button>
+              <button class="theme-btn" data-theme="amber">
+                <span class="color-dot" style="background: #f59e0b;"></span> Amber
+              </button>
+              <button class="theme-btn" data-theme="cyber">
+                <span class="color-dot" style="background: #ff0080;"></span> Cyber
+              </button>
+            </div>
+          </div>
+
+          <!-- Mouse Gravity Mode -->
+          <div class="lab-control-group">
+            <div class="control-label">
+              <span><i class="fa-solid fa-magnet"></i> Mouse Gravity</span>
+            </div>
+            <div class="mode-selector-group">
+              <button class="mode-btn active" data-mode="attract">Attract</button>
+              <button class="mode-btn" data-mode="repel">Repel</button>
+              <button class="mode-btn" data-mode="none">Float</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="lab-actions-bar">
+          <div class="lab-hint">
+            <i class="fa-solid fa-lightbulb" style="color: var(--accent);"></i>
+            <span>Click anywhere on the screen or use the button to emit shockwaves!</span>
+          </div>
+          <button class="btn btn-primary" id="btn-burst">
+            <i class="fa-solid fa-burst"></i>
+            <span>Trigger Particle Shockwave</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         Skills Matrix Section
+         ==================================================================== -->
+    <section id="skills" class="reveal-on-scroll">
+      <div class="section-header">
+        <span class="section-tag">// TECH CAPABILITIES</span>
+        <h2 class="section-title">Skills & Proficiencies</h2>
+        <p class="section-desc">
+          A blend of modern web engineering frameworks and fundamental Computer Science principles from my B.Tech curriculum.
+        </p>
+      </div>
+
+      <div class="skills-container">
+        <!-- Frontend & Web Development -->
+        <div class="skills-category-card tilt-card">
+          <div class="category-header">
+            <div class="category-icon">
+              <i class="fa-solid fa-code"></i>
+            </div>
+            <div>
+              <h3>Frontend & Web Animation</h3>
+              <p style="color: var(--text-muted); font-size: 0.85rem;">Interactive UI, Design Systems & Canvas</p>
+            </div>
+          </div>
+
+          <div class="skill-list">
+            <div class="skill-item">
+              <div class="skill-meta">
+                <span>HTML5 & Semantic Markup</span>
+                <span style="color: var(--accent);">95%</span>
+              </div>
+              <div class="skill-bar-bg">
+                <div class="skill-bar-fill" style="width: 95%;"></div>
+              </div>
+            </div>
+
+            <div class="skill-item">
+              <div class="skill-meta">
+                <span>CSS3, Responsive Grid & Keyframes</span>
+                <span style="color: var(--accent);">92%</span>
+              </div>
+              <div class="skill-bar-bg">
+                <div class="skill-bar-fill" style="width: 92%;"></div>
+              </div>
+            </div>
+
+            <div class="skill-item">
+              <div class="skill-meta">
+                <span>JavaScript (ES6+, DOM & Async)</span>
+                <span style="color: var(--accent);">88%</span>
+              </div>
+              <div class="skill-bar-bg">
+                <div class="skill-bar-fill" style="width: 88%;"></div>
+              </div>
+            </div>
+
+            <div class="skill-item">
+              <div class="skill-meta">
+                <span>React.js & Component Architecture</span>
+                <span style="color: var(--accent);">82%</span>
+              </div>
+              <div class="skill-bar-bg">
+                <div class="skill-bar-fill" style="width: 82%;"></div>
+              </div>
+            </div>
+
+            <div class="skill-item">
+              <div class="skill-meta">
+                <span>Canvas 2D / Web Animations & UI Dynamics</span>
+                <span style="color: var(--accent);">85%</span>
+              </div>
+              <div class="skill-bar-bg">
+                <div class="skill-bar-fill" style="width: 85%;"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Engineering & Core B.Tech -->
+        <div class="skills-category-card tilt-card">
+          <div class="category-header">
+            <div class="category-icon">
+              <i class="fa-solid fa-microchip"></i>
+            </div>
+            <div>
+              <h3>Engineering & Core CS</h3>
+              <p style="color: var(--text-muted); font-size: 0.85rem;">Foundational Computer Science Concepts</p>
+            </div>
+          </div>
+
+          <div class="skill-list">
+            <div class="skill-item">
+              <div class="skill-meta">
+                <span>Data Structures & Algorithms</span>
+                <span style="color: var(--accent);">82%</span>
+              </div>
+              <div class="skill-bar-bg">
+                <div class="skill-bar-fill" style="width: 82%;"></div>
+              </div>
+            </div>
+
+            <div class="skill-item">
+              <div class="skill-meta">
+                <span>Object-Oriented Programming (OOP)</span>
+                <span style="color: var(--accent);">88%</span>
+              </div>
+              <div class="skill-bar-bg">
+                <div class="skill-bar-fill" style="width: 88%;"></div>
+              </div>
+            </div>
+
+            <div class="skill-item">
+              <div class="skill-meta">
+                <span>Database Systems (SQL & Relational Models)</span>
+                <span style="color: var(--accent);">80%</span>
+              </div>
+              <div class="skill-bar-bg">
+                <div class="skill-bar-fill" style="width: 80%;"></div>
+              </div>
+            </div>
+
+            <div class="skill-item">
+              <div class="skill-meta">
+                <span>Operating Systems & Computer Networks</span>
+                <span style="color: var(--accent);">78%</span>
+              </div>
+              <div class="skill-bar-bg">
+                <div class="skill-bar-fill" style="width: 78%;"></div>
+              </div>
+            </div>
+
+            <div class="skill-item">
+              <div class="skill-meta">
+                <span>Git, GitHub & Version Control</span>
+                <span style="color: var(--accent);">88%</span>
+              </div>
+              <div class="skill-bar-bg">
+                <div class="skill-bar-fill" style="width: 88%;"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         Featured Projects Showcase
+         ==================================================================== -->
+    <section id="projects" class="reveal-on-scroll">
+      <div class="section-header">
+        <span class="section-tag">// PORTFOLIO</span>
+        <h2 class="section-title">Featured Projects</h2>
+        <p class="section-desc">
+          A selection of web development projects, interactive animation experiments, and student tools.
+        </p>
+      </div>
+
+      <div class="projects-grid">
+        <!-- Project 1 -->
+        <div class="project-card tilt-card">
+          <div>
+            <div class="project-top">
+              <span class="project-badge">Web Dev & Animation</span>
+              <div class="project-links">
+                <a href="#" class="project-icon-btn" title="View Code"><i class="fa-brands fa-github"></i></a>
+                <a href="#" class="project-icon-btn" title="Live Demo"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+              </div>
+            </div>
+            <h3 class="project-title">Interactive Particle Constellation Hub</h3>
+            <p class="project-desc">
+              High-performance interactive web application with custom HTML5 Canvas particle physics, gravitational pull, 3D card tilts, and cyber glass styling.
+            </p>
+          </div>
+          <div class="project-tags">
+            <span class="project-tag">HTML5 Canvas</span>
+            <span class="project-tag">CSS3</span>
+            <span class="project-tag">JavaScript ES6</span>
+            <span class="project-tag">Web Audio</span>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="project-card tilt-card">
+          <div>
+            <div class="project-top">
+              <span class="project-badge">Student Hub</span>
+              <div class="project-links">
+                <a href="#" class="project-icon-btn" title="View Code"><i class="fa-brands fa-github"></i></a>
+                <a href="#" class="project-icon-btn" title="Live Demo"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+              </div>
+            </div>
+            <h3 class="project-title">B.Tech DevSphere Resource Hub</h3>
+            <p class="project-desc">
+              A collaborative engineering portal for undergraduate students containing course notes, algorithmic visualizers, curated dev resources, and past papers.
+            </p>
+          </div>
+          <div class="project-tags">
+            <span class="project-tag">React</span>
+            <span class="project-tag">Tailwind</span>
+            <span class="project-tag">REST APIs</span>
+            <span class="project-tag">UI/UX</span>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="project-card tilt-card">
+          <div>
+            <div class="project-top">
+              <span class="project-badge">Algorithms & UI</span>
+              <div class="project-links">
+                <a href="#" class="project-icon-btn" title="View Code"><i class="fa-brands fa-github"></i></a>
+                <a href="#" class="project-icon-btn" title="Live Demo"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+              </div>
+            </div>
+            <h3 class="project-title">AlgoMotion - Algorithm Visualizer</h3>
+            <p class="project-desc">
+              Dynamic visualizer that animates sorting routines (QuickSort, MergeSort) and pathfinding traversals (Dijkstra, A*) with step controls and sound feedback.
+            </p>
+          </div>
+          <div class="project-tags">
+            <span class="project-tag">Data Structures</span>
+            <span class="project-tag">JavaScript</span>
+            <span class="project-tag">Visualizer</span>
+            <span class="project-tag">CSS Keyframes</span>
+          </div>
+        </div>
+
+        <!-- Project 4 -->
+        <div class="project-card tilt-card">
+          <div>
+            <div class="project-top">
+              <span class="project-badge">Dashboard UI</span>
+              <div class="project-links">
+                <a href="#" class="project-icon-btn" title="View Code"><i class="fa-brands fa-github"></i></a>
+                <a href="#" class="project-icon-btn" title="Live Demo"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+              </div>
+            </div>
+            <h3 class="project-title">AuraPulse Analytics Dashboard</h3>
+            <p class="project-desc">
+              Sleek dark-mode data analytics dashboard with real-time responsive charts, glassmorphic metrics cards, and animated notification feeds.
+            </p>
+          </div>
+          <div class="project-tags">
+            <span class="project-tag">UI/UX Design</span>
+            <span class="project-tag">CSS Grid</span>
+            <span class="project-tag">Modern JS</span>
+            <span class="project-tag">Charts</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         Education & Journey Timeline
+         ==================================================================== -->
+    <section id="journey" class="reveal-on-scroll">
+      <div class="section-header">
+        <span class="section-tag">// TIMELINE</span>
+        <h2 class="section-title">My Journey So Far</h2>
+        <p class="section-desc">
+          Milestones from academic schooling to engineering college and mastering modern web development.
+        </p>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="timeline-year">2021 - 2022</div>
+            <h3 class="timeline-title">Foundations & Schooling</h3>
+            <p class="timeline-desc">
+              Completed Higher Secondary with focus on Physics, Mathematics, and Computer Science. Built my earliest web pages using foundational HTML and CSS.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="timeline-year">2022 - 2024</div>
+            <h3 class="timeline-title">B.Tech Engineering Admission & Core CS</h3>
+            <p class="timeline-desc">
+              Enrolled in Bachelor of Technology in Computer Science & Engineering. Built solid foundations in Data Structures, OOP, Database Systems, and Discrete Math.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="timeline-year">2024 - 2025</div>
+            <h3 class="timeline-title">Modern Web Development & Animation</h3>
+            <p class="timeline-desc">
+              Expanded into full modern web engineering: JavaScript ES6+, React, CSS animations, HTML5 Canvas 2D graphics, and responsive UI architecture.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="timeline-year">2025 - PRESENT</div>
+            <h3 class="timeline-title">Building Real-World Products & Looking Ahead</h3>
+            <p class="timeline-desc">
+              Developing production-ready applications, open-source projects, and seeking high-impact software engineering and web developer opportunities.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         Contact & Connect Section
+         ==================================================================== -->
+    <section id="contact" class="reveal-on-scroll">
+      <div class="section-header">
+        <span class="section-tag">// REACH OUT</span>
+        <h2 class="section-title">Let's Connect</h2>
+        <p class="section-desc">
+          Have an opportunity, project collaboration, or question? Send me a message or find me on my socials.
+        </p>
+      </div>
+
+      <div class="contact-container">
+        <!-- Contact Information & Channels -->
+        <div class="contact-info-card tilt-card">
+          <h3 style="font-size: 1.4rem; font-weight: 700; margin-bottom: 8px;">Direct Channels</h3>
+          <p style="color: var(--text-secondary); font-size: 0.95rem;">
+            Feel free to email me directly or explore my code repositories on GitHub.
+          </p>
+
+          <div class="contact-channels">
+            <a href="mailto:shibihhh.dev@gmail.com" class="channel-item">
+              <div class="channel-icon"><i class="fa-regular fa-envelope"></i></div>
+              <div class="channel-text">
+                <h4>Email Me</h4>
+                <p>shibilkaratte@gmail.com</p>
+              </div>
+            </a>
+
+            <a href="https://github.com/shibihhh" target="_blank" rel="noopener noreferrer" class="channel-item">
+              <div class="channel-icon"><i class="fa-brands fa-github"></i></div>
+              <div class="channel-text">
+                <h4>GitHub Profile</h4>
+                <p>github.com/shibihhh</p>
+              </div>
+            </a>
+
+            <a href="https://linkedin.com/in/shibihhh" target="_blank" rel="noopener noreferrer" class="channel-item">
+              <div class="channel-icon"><i class="fa-brands fa-linkedin-in"></i></div>
+              <div class="channel-text">
+                <h4>LinkedIn</h4>
+                <p>linkedin.com/in/shibihhh</p>
+              </div>
+            </a>
+
+            <a href="https://twitter.com/shibihhh" target="_blank" rel="noopener noreferrer" class="channel-item">
+              <div class="channel-icon"><i class="fa-brands fa-x-twitter"></i></div>
+              <div class="channel-text">
+                <h4>X (Twitter)</h4>
+                <p>@shibihhh</p>
+              </div>
+            </a>
+          </div>
+
+          <button class="btn btn-glass" id="btn-copy-email" style="width: 100%; justify-content: center;">
+            <i class="fa-regular fa-copy"></i>
+            <span>Copy Email Address</span>
+          </button>
+        </div>
+
+        <!-- Interactive Contact Form -->
+        <form class="contact-form tilt-card" id="contact-form">
+          <h3 style="font-size: 1.4rem; font-weight: 700;">Send a Direct Message</h3>
+
+          <div class="form-group">
+            <label for="form-name">Your Name</label>
+            <input type="text" id="form-name" placeholder="e.g. Alex Smith" required>
+          </div>
+
+          <div class="form-group">
+            <label for="form-email">Your Email Address</label>
+            <input type="email" id="form-email" placeholder="e.g. alex@example.com" required>
+          </div>
+
+          <div class="form-group">
+            <label for="form-message">Message</label>
+            <textarea id="form-message" placeholder="Hi Shibihhh, I'd love to collaborate with you on..." required></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="justify-content: center; width: 100%;">
+            <i class="fa-regular fa-paper-plane"></i>
+            <span>Send Message</span>
+          </button>
+
+          <!-- Success Feedback Overlay -->
+          <div class="form-success-toast" id="form-success">
+            <div class="toast-icon">
+              <i class="fa-solid fa-circle-check"></i>
+            </div>
+            <h4 style="font-size: 1.3rem; font-weight: 700;">Message Sent!</h4>
+            <p style="color: var(--text-secondary); max-width: 280px; font-size: 0.92rem;">
+              Thank you for reaching out! Shibihhh will get back to you shortly.
+            </p>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         Footer
+         ==================================================================== -->
+    <footer>
+      <div class="footer-content">
+        <div class="footer-socials">
+          <a href="https://github.com/shibihhh" target="_blank" rel="noopener noreferrer" class="footer-social-link" title="GitHub"><i class="fa-brands fa-github"></i></a>
+          <a href="https://linkedin.com/in/shibihhh" target="_blank" rel="noopener noreferrer" class="footer-social-link" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="mailto:shibihhh.dev@gmail.com" class="footer-social-link" title="Email"><i class="fa-regular fa-envelope"></i></a>
+        </div>
+        <p>Designed & Crafted by <b>Shibihhh</b> &copy; 2026. Built with HTML5 Canvas, Modern CSS & JavaScript.</p>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/particles.js"></script>
+  <script src="js/animations.js"></script>
+</body>
+</html>
